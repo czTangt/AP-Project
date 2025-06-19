@@ -7,6 +7,19 @@ export ANDROID=12
 cd ../source || exit
 make
 
-# adb devices
-# adb push ../source/ap.kpm /data/local/tmp
-# adb shell "su -c 'kpatch tcz021112 kpm load /data/local/tmp/ap.kpm'"
+kpatch_file="/data/local/tmp/kpatch"
+kpatch_key="tcz021112"
+kpm_name="Test"
+kpm_file="/data/local/tmp/ap.kpm"
+
+adb devices
+
+# 卸载模块的名称
+adb shell su -c "$kpatch_file $kpatch_key kpm unload $kpm_name"
+
+adb push ../source/ap.kpm $kpm_file
+
+# 加载模块的路径
+adb shell su -c "$kpatch_file $kpatch_key kpm load $kpm_file"
+
+rm -f ../source/ap.kpm

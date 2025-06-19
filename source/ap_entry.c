@@ -12,7 +12,7 @@ static long kernel_init(const char *args, const char *event, void *__user reserv
 {
     // pr_info("kpm hello init, event: %s, args: %s\n", event, args);
     // pr_info("kernelpatch version: %x\n", kpver);
-    pr_info("hello world kernel init\n");
+    pr_info("kernel: hello world kernel init 22\n");
     return 0;
 }
 
@@ -23,7 +23,7 @@ static long kernel_control0(const char *args, char *__user out_msg, int outlen)
 
 static long kernel_exit(void *__user reserved)
 {
-    pr_info("hello world kernel exit\n");
+    pr_info("kernel: hello world kernel exit\n");
     return 0;
 }
 
