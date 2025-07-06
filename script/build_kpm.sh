@@ -8,7 +8,7 @@ cd ../source || exit
 make
 
 kpatch_file="/data/local/tmp/kpatch"
-kpatch_key="tcz021112"
+kpatch_key="123cztang"
 kpm_name="Test"
 kpm_file="/data/local/tmp/ap.kpm"
 

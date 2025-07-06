@@ -11,10 +11,9 @@ CC = $(TARGET_COMPILE)gcc
 LD = $(TARGET_COMPILE)ld
 
 # Kernel and user common header file
-INCLUDE_PATH := ../include
-
-CPPFLAGS := -I$(INCLUDE_PATH)
-CFLAGS := -I$(INCLUDE_PATH)
+PUBLIC_INCLUDE := ./include      # 公共头文件目录
+UTILS_INCLUDE := ./utils         # utils私有头文件目录
+CFLAGS := -I$(PUBLIC_INCLUDE) -I$(UTILS_INCLUDE)
 
 INCLUDE_DIRS := . include patch/include linux/include linux/arch/arm64/include linux/tools/arch/arm64/include
 
