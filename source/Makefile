@@ -21,6 +21,7 @@ INCLUDE_DIRS := . include patch/include linux/include linux/arch/arm64/include l
 INCLUDE_FLAGS := $(foreach dir,$(INCLUDE_DIRS),-I$(KP_DIR)/kernel/$(dir))
 
 BASE_SRCS += ./ap_entry.c
+BASE_SRCS += ./utils/ap_syscall.c
 
 SRCS += $(BASE_SRCS)
 
